@@ -60,7 +60,7 @@ int tcp_conn(const char* host,unsigned short port)
 	{
 		char* ip = host_to_ip(host);
 		addr.sin_addr.s_addr = inet_addr(ip);
-		free(ip);
+		//free(ip);
 	}
 
 	socklen_t len = sizeof(addr);

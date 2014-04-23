@@ -31,3 +31,10 @@ int is_valid_addr(const char* addr);
  * Host name to IP address(DNS)
  */
 char* host_to_ip(const char* addr);
+
+/*
+ * 1.If addr is a valid ip address,return addr;
+ * 2.If addr is a host name,call host_to_ip and return;
+ * 3.return null
+ */
+const char* ensure_valid_ip(const char* addr);

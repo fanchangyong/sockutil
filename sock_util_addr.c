@@ -29,7 +29,7 @@ int is_valid_addr(const char* addr)
 	if(n!=4)
 		ret = 0;
 	ret = 1;
-	free(dupaddr);
+	//free(dupaddr);
 	return ret;
 }
 
@@ -43,4 +43,13 @@ char* host_to_ip(const char* addr)
 	char *str = malloc(1024);
 	inet_ntop(AF_INET,he->h_addr,str,1024);
 	return str;
+}
+
+const char* ensure_valid_ip(const char* addr)
+{
+	if(is_valid_addr(addr))
+	{
+		return addr;
+	}
+	return host_to_ip(addr);
 }

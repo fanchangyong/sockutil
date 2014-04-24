@@ -10,6 +10,13 @@ int tcp_server(unsigned short port)
 	{
 		return -1;
 	}
+
+	int optval = 1;
+	if(setsockopt(fd,SOL_SOCKET,SO_REUSEADDR,&optval,sizeof(optval))==-1)
+	{
+		return -1;
+	}
+
 	struct sockaddr_in addr;
 	addr.sin_family = AF_INET;
 	addr.sin_port = htons(port);

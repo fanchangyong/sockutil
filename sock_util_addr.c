@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <netdb.h>
+#include <errno.h>
 
 extern int errno;
 
